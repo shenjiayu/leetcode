@@ -28,9 +28,6 @@ func test(list []int) {
 					break
 				}
 			} else if list[i] >= list[current] && i-current > 1 {
-				fmt.Printf("current node is %d\n", current)
-				fmt.Printf("node %d\n", i)
-				fmt.Printf("potential %s\n", potential)
 				distance += potential
 				k = i
 				current = i
