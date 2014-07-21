@@ -6,10 +6,10 @@ import (
 
 func main() {
 	list := []int{2, 1, 0, 2, 1, 0, 1, 3, 2, 1, 3, 1}
-	test(list)
+	trw(list)
 }
 
-func test(list []int) {
+func trw(list []int) {
 	current := 0
 	distance := 0
 	potential := 0
@@ -20,13 +20,12 @@ func test(list []int) {
 			continue
 		}
 		for i := current + 1; i < length; i++ {
-			if list[i] < list[current] {
+			if i == length-1 {
+				current++
+				potential = 0
+				break
+			} else if list[i] < list[current] {
 				potential += list[current] - list[i]
-				if i == length-1 {
-					current++
-					potential = 0
-					break
-				}
 			} else if list[i] >= list[current] && i-current > 1 {
 				distance += potential
 				k = i
